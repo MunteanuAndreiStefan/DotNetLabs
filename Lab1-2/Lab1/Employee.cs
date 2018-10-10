@@ -29,6 +29,7 @@ namespace Lab1
             EndDate=end;
             Salary=salary;
         }
+
         public virtual string Salutation()
         {
             return "Hello, employee";

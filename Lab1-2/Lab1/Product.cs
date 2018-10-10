@@ -22,6 +22,17 @@ namespace Lab1
             VAT=0;
         }
 
+        public Product(int id, string name, string description, DateTime startDate, DateTime endDate, double price, int VAT)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            StartDate = startDate;
+            EndDate = endDate;
+            Price = price;
+            this.VAT = VAT;
+        }
+
         public bool IsValid(){
             if(StartDate<=EndDate && DateTime.Now<EndDate && DateTime.Now>StartDate)
                 return true;
