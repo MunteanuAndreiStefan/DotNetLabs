@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DotNet\\Proiect\\Lab1\\Lab1.csproj",
+      "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\Git\\DotNetLabs\\Lab1-2\\Lab1\\Lab1.csproj",
       "projectName": "Lab1",
-      "projectPath": "C:\\DotNet\\Proiect\\Lab1\\Lab1.csproj",
+      "projectPath": "C:\\Users\\Stefan\\Desktop\\Git\\DotNetLabs\\Lab1-2\\Lab1\\Lab1.csproj",
       "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "C:\\DotNet\\Proiect\\Lab1\\obj\\",
+      "outputPath": "C:\\Users\\Stefan\\Desktop\\Git\\DotNetLabs\\Lab1-2\\Lab1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

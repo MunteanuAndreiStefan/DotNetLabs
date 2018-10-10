@@ -5871,11 +5871,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DotNet\\Proiect\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\Git\\DotNetLabs\\Lab1-2\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\DotNet\\Proiect\\Test\\Test.csproj",
+      "projectPath": "C:\\Users\\Stefan\\Desktop\\Git\\DotNetLabs\\Lab1-2\\Test\\Test.csproj",
       "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "C:\\DotNet\\Proiect\\Test\\obj\\",
+      "outputPath": "C:\\Users\\Stefan\\Desktop\\Git\\DotNetLabs\\Lab1-2\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5894,8 +5894,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\DotNet\\Proiect\\Lab1\\Lab1.csproj": {
-              "projectPath": "C:\\DotNet\\Proiect\\Lab1\\Lab1.csproj"
+            "C:\\Users\\Stefan\\Desktop\\Git\\DotNetLabs\\Lab1-2\\Lab1\\Lab1.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Desktop\\Git\\DotNetLabs\\Lab1-2\\Lab1\\Lab1.csproj"
             }
           }
         }
