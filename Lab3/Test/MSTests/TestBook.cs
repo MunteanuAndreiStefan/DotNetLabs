@@ -6,9 +6,8 @@ using System.Linq;
 namespace Test.MSTests
 {
     [TestClass]
-    public class TestProduct
+    public class TestBook
     {
-
         private static Book product;
 
         [ClassInitialize]
@@ -30,12 +29,13 @@ namespace Test.MSTests
         [TestMethod]
         public void BookConstructorValues()
         {
-            var book = new Book(1, "Test", "BlaBla", 100, 2018);
+            var book = new Book(1, "Test", "BlaBla", 100, 2018, Book.Generes.story);
             Assert.AreEqual(1, book.Id);
             Assert.IsTrue("Test".ToCharArray().SequenceEqual(book.Name));
             Assert.AreEqual("BlaBla", book.Description);
             Assert.AreEqual(100, book.Price);
             Assert.AreEqual(2018, book.Year);
+            Assert.AreEqual(Book.Generes.story, book.Genre);
         }
     }
 }

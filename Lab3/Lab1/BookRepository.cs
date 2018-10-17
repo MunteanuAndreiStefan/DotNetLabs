@@ -3,9 +3,10 @@ using System.Linq;
 
 namespace Lab3
 {
-    class BookRepository
+    public class BookRepository : IBookRepository
     {
         private List<Book> bookList;
+        private List<Book> cBookList;
         private int lastSort = 0;
 
         public BookRepository() {
@@ -24,45 +25,45 @@ namespace Lab3
         {
             if (lastSort != 1)
             {
-                bookList.OrderByDescending(x => x.Year);
+                cBookList = bookList.OrderByDescending(x => x.Year).ToList();
                 lastSort = 1;
             }
-            return bookList;
+            return cBookList;
         }
 
         public List<Book> RetriveAllOrderByYearAscending()
         {
             if (lastSort != 2)
             {
-                bookList.OrderBy(x => x.Year);
+                cBookList = bookList.OrderBy(x => x.Year).ToList();
                 lastSort = 2;
             }
-            return bookList;
+            return cBookList;
         }
 
         public List<Book> RetriveAllOrderByPriceDescending()
         {
             if (lastSort != 3)
             {
-                bookList.OrderByDescending(x => x.Price);
+                cBookList = bookList.OrderByDescending(x => x.Price).ToList();
                 lastSort = 3;
             }
-            return bookList;
+            return cBookList;
         }
 
         public List<Book> RetriveAllOrderByPriceAscending()
         {
             if (lastSort != 4)
             {
-                bookList.OrderBy(x => x.Price);
+                cBookList = bookList.OrderBy(x => x.Price).ToList();
                 lastSort = 4;
             }
-            return bookList;
+            return cBookList;
         }
 
         public List<Book> RetriveAllBooksGroupedByGenre(Book.Generes genre)
         {
-            List<Book> list = new List<Book> (bookList.Where(x => x.Genre == genre));
+            List<Book> list = new List<Book>(bookList.Where(x => x.Genre == genre));
             return list;
         }
     }

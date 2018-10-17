@@ -22,12 +22,14 @@ namespace Lab3
             Year=0;
         }
 
-        public Book(int id, string name, string description, double price, int year)
+        public Book(int id, string name, string description, double price, int year, Generes genre)
         {
             Id = id;
+            Name = new char[100];
             Name = name.ToCharArray();
             Description = description;
             Price = price;
+            Genre = genre;
             this.Year = year;
         }
 
