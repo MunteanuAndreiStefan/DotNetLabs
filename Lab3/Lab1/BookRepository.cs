@@ -9,15 +9,35 @@ namespace Lab3
         private List<Book> cBookList;
         private int lastSort = 0;
 
-        public BookRepository() {
+        public BookRepository()
+        {
             bookList = new List<Book>();
         }
 
-        public void AddBook(Book toAdd) {
+        public BookRepository(params Book[] values)
+        {
+            bookList = new List<Book>();
+            foreach (Book value in values)
+            {
+                bookList.Add(value);
+            }
+        }
+
+        public void AddBook(Book toAdd)
+        {
             bookList.Add(toAdd);
         }
 
-        public List<Book> RetriveAllBooks() {
+        public void AddBook(params Book[] values)
+        {
+            foreach (Book value in values)
+            {
+                bookList.Add(value);
+            }
+        }
+
+        public List<Book> RetriveAllBooks()
+        {
             return bookList;
         }
 

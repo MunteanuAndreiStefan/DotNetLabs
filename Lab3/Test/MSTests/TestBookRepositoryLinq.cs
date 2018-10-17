@@ -6,7 +6,7 @@ using System.Linq;
 namespace Test.MSTests
 {
     [TestClass]
-    public class TestBookRepository
+    public class TestBookRepositoryLinq
     {
         private static BookRepository books;
 
@@ -34,31 +34,31 @@ namespace Test.MSTests
         [TestMethod]
         public void TestRetriveAllOrderByYearAscending()
         {
-            CollectionAssert.AreEqual(books.MRetriveAllOrderByYearAscending(), books.RetriveAllBooks());
+            CollectionAssert.AreEqual(books.RetriveAllOrderByYearAscending(), books.RetriveAllBooks());
         }
 
         [TestMethod]
         public void RetriveAllOrderByYearDescending()
         {
-            CollectionAssert.AreEqual(books.RetriveAllBooks().Reverse<Book>().ToList(), books.MRetriveAllOrderByYearDescending());
+            CollectionAssert.AreEqual(books.RetriveAllBooks().Reverse<Book>().ToList(), books.RetriveAllOrderByYearDescending());
         }
 
         [TestMethod]
         public void TestRetriveAllOrderByPriceAscending()
         {
-            CollectionAssert.AreEqual(books.MRetriveAllOrderByPriceAscending(), books.RetriveAllBooks().ToList());
+            CollectionAssert.AreEqual(books.RetriveAllOrderByPriceAscending(), books.RetriveAllBooks().ToList());
         }
 
         [TestMethod]
         public void TestRetriveAllOrderByPriceDescending()
         {
-            CollectionAssert.AreEqual(books.RetriveAllBooks().Reverse<Book>().ToList(), books.MRetriveAllOrderByPriceDescending());
+            CollectionAssert.AreEqual(books.RetriveAllBooks().Reverse<Book>().ToList(), books.RetriveAllOrderByPriceDescending());
         }
 
         [TestMethod]
         public void TestRetriveAllBooksGroupedByGenre()
         {
-            Assert.AreEqual(books.MRetriveAllBooksGroupedByGenre(Book.Generes.action).Count, 4);
+            Assert.AreEqual(books.RetriveAllBooksGroupedByGenre(Book.Generes.action).Count, 4);
         }
     }
 }
