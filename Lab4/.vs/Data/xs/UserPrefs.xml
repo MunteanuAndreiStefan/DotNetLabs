@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/Customer.cs">
+    <Files>
+      <File FileName="Data/ProductRepository.cs" Line="9" Column="37" />
+      <File FileName="Data/CustomerRepository.cs" Line="13" Column="10" />
+      <File FileName="Data/Product.cs" Line="8" Column="12" />
+      <File FileName="Data/CustomerContext.cs" Line="5" Column="33" />
+      <File FileName="Data/Customer.cs" Line="6" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
