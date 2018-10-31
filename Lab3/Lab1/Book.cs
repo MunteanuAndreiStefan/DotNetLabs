@@ -10,7 +10,6 @@ namespace Lab3
         public double Price {get; private set;}
         public int Year {get; private set;}
         public Generes Genre { get; private set; }
-        public enum Generes { science, action, story, kids, manual };
 
 
         public Book(){

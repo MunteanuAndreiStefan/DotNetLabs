@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lab3;
 using System.Linq;
 
@@ -13,15 +12,15 @@ namespace Test.MSTests
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            books = new BookRepository(new Book(1, "1", "Description", 10, 2008, Book.Generes.action));
-            books.AddBook(new Book(2, "2", "Description", 20, 2009, Book.Generes.action));
-            books.AddBook(new Book(3, "3", "Description", 30, 2010, Book.Generes.action));
-            books.AddBook(new Book(4, "4", "Description", 40, 2011, Book.Generes.kids));
-            books.AddBook(new Book(5, "5", "Description", 50, 2012, Book.Generes.kids));
-            books.AddBook(new Book(6, "6", "Description", 60, 2013, Book.Generes.manual));
-            books.AddBook(new Book(7, "7", "Description", 70, 2014, Book.Generes.science));
-            books.AddBook(new Book(8, "8", "Description", 80, 2015, Book.Generes.action));
-            books.AddBook(new Book(9, "9", "Description", 90, 2016, Book.Generes.story), new Book(10, "10", "Description", 100, 2017, Book.Generes.story));
+            books = new BookRepository(new Book(1, "1", "Description", 10, 2008, Generes.Action));
+            books.AddBook(new Book(2, "2", "Description", 20, 2009, Generes.Action));
+            books.AddBook(new Book(3, "3", "Description", 30, 2010, Generes.Action));
+            books.AddBook(new Book(4, "4", "Description", 40, 2011, Generes.Kids));
+            books.AddBook(new Book(5, "5", "Description", 50, 2012, Generes.Kids));
+            books.AddBook(new Book(6, "6", "Description", 60, 2013, Generes.Manual));
+            books.AddBook(new Book(7, "7", "Description", 70, 2014, Generes.Science));
+            books.AddBook(new Book(8, "8", "Description", 80, 2015, Generes.Action));
+            books.AddBook(new Book(9, "9", "Description", 90, 2016, Generes.Story), new Book(10, "10", "Description", 100, 2017, Generes.Story));
         }
 
 
@@ -58,7 +57,7 @@ namespace Test.MSTests
         [TestMethod]
         public void TestRetriveAllBooksGroupedByGenre()
         {
-            Assert.AreEqual(books.MRetriveAllBooksGroupedByGenre(Book.Generes.action).Count, 4);
+            Assert.AreEqual(books.MRetriveAllBooksGroupedByGenre(Generes.Action).Count, 4);
         }
     }
 }

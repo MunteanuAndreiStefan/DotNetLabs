@@ -139,13 +139,14 @@ namespace Lab3
             return cBookList;
         }
 
-        public List<Book> RetriveAllBooksGroupedByGenre(Book.Generes genre)
+        public List<Book> RetriveAllBooksGroupedByGenre(Generes genre)
         {
+            var result = bookList.GroupBy(b => b.Genre);
             List<Book> list = new List<Book>(bookList.Where(x => x.Genre == genre));
             return list;
         }
 
-        public List<Book> MRetriveAllBooksGroupedByGenre(Book.Generes genre)
+        public List<Book> MRetriveAllBooksGroupedByGenre(Generes genre)
         {
             List<Book> list = new List<Book>();
             foreach (Book b in bookList)

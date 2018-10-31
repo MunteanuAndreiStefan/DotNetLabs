@@ -29,13 +29,13 @@ namespace Test.MSTests
         [TestMethod]
         public void BookConstructorValues()
         {
-            var book = new Book(1, "Test", "BlaBla", 100, 2018, Book.Generes.story);
+            var book = new Book(1, "Test", "BlaBla", 100, 2018, Generes.Story);
             Assert.AreEqual(1, book.Id);
             Assert.IsTrue("Test".ToCharArray().SequenceEqual(book.Name));
             Assert.AreEqual("BlaBla", book.Description);
             Assert.AreEqual(100, book.Price);
             Assert.AreEqual(2018, book.Year);
-            Assert.AreEqual(Book.Generes.story, book.Genre);
+            Assert.AreEqual(Generes.Story, book.Genre);
         }
     }
 }

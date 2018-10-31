@@ -16,6 +16,6 @@ namespace Lab3
 
         List<Book> RetriveAllOrderByPriceAscending();
     
-        List<Book> RetriveAllBooksGroupedByGenre(Book.Generes genre);
+        List<Book> RetriveAllBooksGroupedByGenre(Generes genre);
     }
 }
