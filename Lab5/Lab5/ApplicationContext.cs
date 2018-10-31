@@ -18,7 +18,7 @@ namespace Lab5
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mslocaldb;Database=DatabaseName;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Dotnet;Trusted_Connection=True;");
             }
         }
 
