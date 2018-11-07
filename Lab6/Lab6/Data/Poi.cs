@@ -16,6 +16,10 @@ namespace Lab6.Data
         [StringLength(150)]
         public string Description { get; private set; }
 
+        public double Latitude { get; set; }
+
+        public double Longitude { get; set; }
+
         public Guid? CityId { get; set; }
 
         public virtual City City { get; set; }
