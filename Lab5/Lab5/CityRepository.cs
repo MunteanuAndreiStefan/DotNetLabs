@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+
 namespace Lab5
 {
     public class CityRepository
