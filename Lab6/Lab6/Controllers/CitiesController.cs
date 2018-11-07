@@ -1,23 +1,27 @@
 ﻿using System;
-using System.Linq;
 using System.Threading.Tasks;
-using Lab6.Data;
+using DataLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using BusinessLayer;
 
 namespace Lab6.Controllers
 {
     public class CitiesController : Controller
     {
-        private readonly CityContext _context;
+        private IRepository _cityRepository;
 
-        public CitiesController(CityContext context)
+        public CitiesController(IRepository context)
         {
-            _context = context;
+            _cityRepository = context;
         }
 
+
         // GET: Cities
-        public async Task<IActionResult> Index() => View(await _context.Cities.ToListAsync());
+        public async Task<IActionResult> Index()
+        {
+            return View(await _cityRepository.GetAllCities());
+        }
 
         // GET: Cities/Details/5
         public async Task<IActionResult> Details(Guid? id)
@@ -27,8 +31,7 @@ namespace Lab6.Controllers
                 return NotFound();
             }
 
-            var city = await _context.Cities
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var city = await _cityRepository.FirstOrDefault(id);
             if (city == null)
             {
                 return NotFound();
@@ -52,9 +55,7 @@ namespace Lab6.Controllers
         {
             if (ModelState.IsValid)
             {
-                city.Id = Guid.NewGuid();
-                _context.Add(city);
-                await _context.SaveChangesAsync();
+                await _cityRepository.Create(city);
                 return RedirectToAction(nameof(Index));
             }
             return View(city);
@@ -68,7 +69,7 @@ namespace Lab6.Controllers
                 return NotFound();
             }
 
-            var city = await _context.Cities.FindAsync(id);
+            var city = await _cityRepository.FindAsync(id);
             if (city == null)
             {
                 return NotFound();
@@ -92,8 +93,7 @@ namespace Lab6.Controllers
             {
                 try
                 {
-                    _context.Update(city);
-                    await _context.SaveChangesAsync();
+                    await _cityRepository.Update(city);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -111,7 +111,7 @@ namespace Lab6.Controllers
             return View(city);
         }
 
-        // GET: Cities/Delete/5
+        // GET: Cities/DeleteConfirm/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -119,8 +119,8 @@ namespace Lab6.Controllers
                 return NotFound();
             }
 
-            var city = await _context.Cities
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var city = await _cityRepository.FirstOrDefault(id);
+
             if (city == null)
             {
                 return NotFound();
@@ -129,20 +129,19 @@ namespace Lab6.Controllers
             return View(city);
         }
 
-        // POST: Cities/Delete/5
+        // POST: Cities/DeleteConfirm/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var city = await _context.Cities.FindAsync(id);
-            _context.Cities.Remove(city);
-            await _context.SaveChangesAsync();
+            await _cityRepository.DeleteConfirm(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool TodoExists(Guid id)
         {
-            return _context.Cities.Any(e => e.Id == id);
+            return _cityRepository.Exists(id);
         }
+
     }
 }

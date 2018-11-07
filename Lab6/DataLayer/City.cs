@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Lab6.Data
+namespace DataLayer
 {
     public class City
     {
@@ -22,16 +22,10 @@ namespace Lab6.Data
 
         public bool IsCapital { get; set; }
 
-        public virtual ICollection<Poi> Pois { get; private set; }
+        public ICollection<Poi> Pois { get; private set; }
 
-        public City(string name, string description, double latitude, double longitude)
+        public City()
         {
-            Id = Guid.NewGuid();
-            Name = name;
-            Description = description;
-            Latitude = latitude;
-            Longitude = longitude;
-            Pois = new HashSet<Poi>();
         }
 
     }

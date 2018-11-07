@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Lab6.Data
+namespace DataLayer
 {
     public class Poi : IPoi
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Lab6.Data
+namespace DataLayer
 {
     public sealed class CityContext : DbContext
     {

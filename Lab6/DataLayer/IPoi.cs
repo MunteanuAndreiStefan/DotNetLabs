@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab6.Data
+namespace DataLayer
 {
     public interface IPoi
     {

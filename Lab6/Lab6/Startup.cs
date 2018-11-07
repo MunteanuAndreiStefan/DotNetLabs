@@ -1,4 +1,5 @@
-﻿using Lab6.Data;
+﻿using BusinessLayer;
+using DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,6 +31,7 @@ namespace Lab6
 
             services.AddDbContext<CityContext>(options => options.UseSqlServer(@"Server = (LocalDB)\MSSQLLocalDB; Database = Lab6; Trusted_Connection = True;"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient<IRepository, Repository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
