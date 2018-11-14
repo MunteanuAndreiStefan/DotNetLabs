@@ -1,0 +1,14 @@
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\obj\Debug\netcoreapp2.1\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\obj\Debug\netcoreapp2.1\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\obj\Debug\netcoreapp2.1\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\obj\Debug\netcoreapp2.1\BusinessLayer.AssemblyInfo.cs
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\bin\Debug\netcoreapp2.1\BusinessLayer.deps.json
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\bin\Debug\netcoreapp2.1\BusinessLayer.dll
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\bin\Debug\netcoreapp2.1\BusinessLayer.pdb
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\bin\Debug\netcoreapp2.1\DataLayer.dll
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\bin\Debug\netcoreapp2.1\DataLayer.pdb
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\obj\Debug\netcoreapp2.1\BusinessLayer.csproj.CopyComplete
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\obj\Debug\netcoreapp2.1\BusinessLayer.dll
+C:\Users\Stefan\Desktop\Git\DotNetLabs\Lab6\Business Layer\obj\Debug\netcoreapp2.1\BusinessLayer.pdb
