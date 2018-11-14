@@ -18,7 +18,7 @@ namespace DataLayer
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlServer(@"Server=localhost;Database=Laborator7;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Laborator7;Trusted_Connection=True;");
             }
         }
 

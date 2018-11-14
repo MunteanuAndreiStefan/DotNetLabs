@@ -18,19 +18,16 @@ namespace Laborator7.Controllers
             _repository = repository;
         }
 
-
         [HttpGet]
         public ActionResult<IReadOnlyList<Poi>> Get()
         {
             return Ok(_repository.GetAll());
         }
 
-    
-
         [HttpGet("{id}", Name = "GetByPoiId")]
         public ActionResult<Poi> Get(Guid poiId)
         {
-            return Ok(this._repository.GetById(poiId));
+            return Ok(_repository.GetById(poiId));
         }
 
         [HttpPost]
@@ -42,11 +39,9 @@ namespace Laborator7.Controllers
                 return BadRequest();
             }
 
-
-
             var poi = new Poi(createTodoModel.Description);
 
-            this._repository.Create(poi);
+            _repository.Create(poi);
 
 
             return CreatedAtRoute("GetByPoiId", new { id = poi.Id }, poi);

@@ -29,7 +29,7 @@ namespace Laborator7.Controllers
         [HttpGet("{id}", Name = "GetById")]
         public ActionResult<City> Get(Guid id)
         {
-            return Ok(this._repository.GetById(id));
+            return Ok(_repository.GetById(id));
         }
 
         [HttpPost]
