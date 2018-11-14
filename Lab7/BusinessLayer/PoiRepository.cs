@@ -8,9 +8,9 @@ namespace BusinessLayer
 
     public class PoiRepository : IPoiRepository
     {
-        private readonly PoisContext _context;
+        private readonly ApplicationContext _context;
 
-        public PoiRepository(PoisContext context)
+        public PoiRepository(ApplicationContext context)
         {
             _context = context;
         }

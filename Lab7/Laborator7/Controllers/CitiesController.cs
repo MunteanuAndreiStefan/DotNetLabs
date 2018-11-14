@@ -40,9 +40,13 @@ namespace Laborator7.Controllers
                 return BadRequest();
             }
 
-            City city = new City(createTodoModel.Description);
+            var city = new City
+                            {
+                                Id = createTodoModel.Id,
+                                Description = createTodoModel.Description
+                            };
 
-            this._repository.Create(city);
+            _repository.Create(city);
 
             return CreatedAtRoute("GetById", new { id = city.Id }, city);
         }

@@ -35,15 +35,14 @@
                     options.MinimumSameSitePolicy = SameSiteMode.None;
                 });
 
-            services.AddDbContext<CitiesContext>(options => options.UseSqlServer(@"Server = (LocalDB)\MSSQLLocalDB; Database = Laborator7; Trusted_Connection = True;"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSwaggerGen(c =>
                 {
                     c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
                 });
-            services.AddTransient<ICityRepository, CityRepository>();
-            services.AddTransient<IPoiRepository, PoiRepository>();
+            services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IPoiRepository, PoiRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

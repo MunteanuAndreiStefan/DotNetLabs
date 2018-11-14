@@ -7,7 +7,7 @@ using Laborator7.Models;
 
 namespace Laborator7.Controllers
 {
-    [Route("api/Pois/{id}")]
+    [Route("api/[controller]/{cityId}/Pois")]
     [ApiController]
     public class PoisController : ControllerBase
     {
@@ -20,37 +20,26 @@ namespace Laborator7.Controllers
 
 
         [HttpGet]
-        [Route("/Pois")]
         public ActionResult<IReadOnlyList<Poi>> Get()
         {
-
             return Ok(_repository.GetAll());
-
         }
 
     
 
-        [HttpGet("{poiId}", Name = "GetByPoiId")]
-        [Route("/Pois/{poiId}")]
+        [HttpGet("{id}", Name = "GetByPoiId")]
         public ActionResult<Poi> Get(Guid poiId)
         {
-
             return Ok(this._repository.GetById(poiId));
-
         }
 
         [HttpPost]
-        [Route("/Pois")]
         public ActionResult<Poi> Post([FromBody] CreatePoiModel createTodoModel)
-
         {
 
             if (createTodoModel == null)
-
             {
-
                 return BadRequest();
-
             }
 
 
@@ -60,9 +49,7 @@ namespace Laborator7.Controllers
             this._repository.Create(poi);
 
 
-
             return CreatedAtRoute("GetByPoiId", new { id = poi.Id }, poi);
-
         }
     }
 }
