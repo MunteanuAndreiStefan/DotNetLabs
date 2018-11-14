@@ -7,22 +7,21 @@ using Laborator7.Models;
 
 namespace Laborator7.Controllers
 {
-    [Route("api/cities/{id}")]
+    [Route("api/Pois/{id}")]
     [ApiController]
     public class PoisController : ControllerBase
     {
-        private readonly ICityRepository _repository; 
+        private readonly IPoiRepository _repository; 
 
-        public PoisController(ICityRepository repository)
+        public PoisController(IPoiRepository repository)
         {
             _repository = repository;
         }
 
 
         [HttpGet]
-        [Route("/pois")]
-        public ActionResult<IReadOnlyList<City>> Get()
-
+        [Route("/Pois")]
+        public ActionResult<IReadOnlyList<Poi>> Get()
         {
 
             return Ok(_repository.GetAll());
@@ -31,10 +30,9 @@ namespace Laborator7.Controllers
 
     
 
-        [HttpGet("{poiId}", Name = "GetById")]
-        [Route("/pois/{poiId}")]
-        public ActionResult<City> Get(Guid poiId)
-
+        [HttpGet("{poiId}", Name = "GetByPoiId")]
+        [Route("/Pois/{poiId}")]
+        public ActionResult<Poi> Get(Guid poiId)
         {
 
             return Ok(this._repository.GetById(poiId));
@@ -42,8 +40,8 @@ namespace Laborator7.Controllers
         }
 
         [HttpPost]
-        [Route("/pois")]
-        public ActionResult<City> Post([FromBody] CreatePoiModel createTodoModel)
+        [Route("/Pois")]
+        public ActionResult<Poi> Post([FromBody] CreatePoiModel createTodoModel)
 
         {
 
@@ -57,13 +55,13 @@ namespace Laborator7.Controllers
 
 
 
-            City city = new City(createTodoModel.Description);
+            var poi = new Poi(createTodoModel.Description);
 
-            this._repository.Create(city);
+            this._repository.Create(poi);
 
 
 
-            return CreatedAtRoute("GetById", new { id = city.Id }, city);
+            return CreatedAtRoute("GetByPoiId", new { id = poi.Id }, poi);
 
         }
     }

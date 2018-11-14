@@ -6,14 +6,6 @@ using System.Linq;
 namespace BusinessLayer
 {
 
-    public interface IPoiRepository
-    {
-        void Create(Poi Poi);
-        void Delete(Poi PoiId);
-        IReadOnlyList<Poi> GetAll();
-        Poi GetById(Guid id);
-    }
-
     public class PoiRepository : IPoiRepository
     {
         private readonly PoisContext _context;

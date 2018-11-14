@@ -1,11 +1,19 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Laborator7
+﻿namespace Laborator7
 {
+    using BusinessLayer;
+
+    using DataLayer;
+
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+
+    using Swashbuckle.AspNetCore.Swagger;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -19,11 +27,30 @@ namespace Laborator7
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.Configure<CookiePolicyOptions>(options =>
+                {
+                    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                    options.CheckConsentNeeded = context => true;
+                    options.MinimumSameSitePolicy = SameSiteMode.None;
+                });
+
+            services.AddDbContext<CitiesContext>(options => options.UseSqlServer(@"Server = (LocalDB)\MSSQLLocalDB; Database = Laborator7; Trusted_Connection = True;"));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                });
+            services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<IPoiRepository, PoiRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -32,6 +59,12 @@ namespace Laborator7
             {
                 app.UseHsts();
             }
+
+            app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                    c.RoutePrefix = string.Empty;
+                });
 
             app.UseHttpsRedirection();
             app.UseMvc();
